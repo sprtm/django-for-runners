@@ -51,7 +51,7 @@ services:
 
     postgres:
         # https://hub.docker.com/_/postgres
-        image: postgres:11-alpine
+        image: postgres:12.4-alpine
         restart: unless-stopped
         hostname: postgres
         ports:
@@ -63,3 +63,5 @@ services:
         volumes:
             - ./postgres/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh:ro
             - ./volumes/postgresql/data/:/var/lib/postgresql/data/:rw
+	    security_opt:
+	        - seccomp:unconfined

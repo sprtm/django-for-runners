@@ -10,8 +10,8 @@ ENV PYTHONUNBUFFERED=1
 RUN set -x \
     && apt-get update \
     && apt-mark auto $(apt-mark showinstall) \
-    && apt-get install -y postgresql-client-11 python3-pip \
-    && apt autoremove \
+    && apt-get install -y postgresql-client-11 python3-pip libpq-dev zlib1g-dev zlib1g libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6 \
+    && apt autoremove -y \
     && apt -y full-upgrade \
     && rm -rf /var/lib/apt \
     && python3 -m pip install -U pip \
