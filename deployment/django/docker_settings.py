@@ -15,14 +15,14 @@ if HOSTNAME != 'localhost':
     INTERNAL_IPS = ()
 else:
     print('Local development mode')
-    DEBUG = True
+    DEBUG = False
     INTERNAL_IPS = ('127.0.0.1', '0.0.0.0', 'localhost')
 
 
 SERVE_FILES = False  # Caddy serve static/media files
 
 
-ALLOWED_HOSTS = (HOSTNAME,)
+ALLOWED_HOSTS = (HOSTNAME, 'runner.local')
 
 
 DATABASES = {

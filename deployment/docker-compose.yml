@@ -63,5 +63,5 @@ services:
         volumes:
             - ./postgres/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh:ro
             - ./volumes/postgresql/data/:/var/lib/postgresql/data/:rw
-	    security_opt:
-	        - seccomp:unconfined
+        security_opt:
+            - seccomp:unconfined

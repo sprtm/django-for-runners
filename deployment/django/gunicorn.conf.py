@@ -5,6 +5,7 @@ import multiprocessing
 
 
 bind = 'django:8000'
+#timeout = 300 # for larger (10+) gpx imports
 
 # https://docs.gunicorn.org/en/latest/settings.html#workers
 workers = multiprocessing.cpu_count() * 2 + 1
